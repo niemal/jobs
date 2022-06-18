@@ -1,0 +1,569 @@
+@media screen and (max-height: 800px) and (min-width: 1200px) {
+    #searchOptions {
+        margin-top: -1% !important;
+    }
+    #contentInfo {
+        top: 33% !important;
+    }
+    .closeButton {
+        &:after {
+            margin-top: -7px !important;
+            margin-left: -4px !important;
+        }
+    }
+    #upArrow {
+        bottom: 5% !important;
+    }
+}
+@media screen and (min-width: 800px) and (max-width: 1080px) {
+    .search {
+        margin-top: -15% !important;
+    }
+    #searchOptions {
+        width: 80% !important;
+    }
+}
+@media screen and (max-width: 1080px) {
+    .search {
+        width: 70%;
+    }
+    #mobileSettings {
+        display: block !important;
+    }
+    #searchOptions {
+        background-color: theme('colors.strong') !important;
+        position: fixed;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        width: 100% !important;
+        text-align: center;
+        left: 0 !important;
+        top: 40% !important;
+        box-shadow: 0 5px 5px rgba(0,0,0,0.3), 0 1px 0 rgba(255,255,255,0.2);
+        display: none;
+    }
+    #searchOptions .closeButton {
+        margin-left: auto;
+        margin-right: 1rem;
+        display: block !important;
+
+        &:after {
+            margin-top: -2.5px !important;
+            margin-left: 2.5px !important;
+        }
+    }
+    #searchOptions button {
+        background-color: theme('colors.secondary_fade');
+    }
+    #dateInput {
+        width: 50% !important;
+        margin-top: 0 !important;
+        background-color: theme('colors.secondary_fade');
+    }
+    #dateInput:focus {
+        border-color: theme('colors.primary');
+    }
+    #tagsModal {
+        height: 55vh !important;
+    }
+    #levelsModal {
+        height: 40vh !important;
+    }
+    #levelsModal .tagsContainer {
+        height: 25vh !important;
+    }
+    .modal {
+        width: 100% !important;
+        border: 3px solid theme('colors.primary');
+        background-color: theme('colors.strong');
+        position: fixed;
+        left: 0 !important;
+        top: 35% !important;
+    }
+    .jobEntry {
+        width: 80% !important;
+    }
+    #upArrow {
+        color: theme('colors.strong') !important;
+        background-color: theme('colors.secondary') !important;
+        border-color: theme('colors.light') !important;
+    }
+    #upArrow:hover {
+        color: theme('colors.strong') !important;
+        background-color: theme('colors.secondary') !important;
+        border-color: theme('colors.light') !important;
+    }
+    .rowColumn img {
+        background-color: theme('colors.secondary_fade') !important;
+    }
+    .header {
+        width: 90% !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .quickView {
+        display: block !important;
+    }
+}
+.primaryShadow {
+    text-shadow: 1px 1px 1px theme('colors.primary');
+}
+.tooltip {
+  font-family: 'Titillium Web';
+  color: theme('colors.strong') !important;
+  font-size: 1.5rem !important;
+  background-color: theme('colors.secondary') !important;
+  border: 5px solid theme('colors.primary') !important;
+  border-left: 0 !important;
+  font-weight: 1000;
+  width: 70% !important;
+}
+#content {
+    text-align: center;
+}
+#mobileSettings {
+    display: none;
+    margin-top: 0.5rem;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.quickView {
+    border: solid 3px theme('colors.primary');
+    background-color: theme('colors.strong');
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.6rem;
+    border-radius: 2rem;
+    margin-top: 5px;
+    display: none;
+    font-family: 'Bebas Neue';
+    font-size: 1.2rem;
+    color: theme('colors.primary');
+    box-shadow: 3px 3px rgba(0,0,0,0.1), 0 7px 0 rgba(255,255,255,0.7);
+    font-style: italic;
+}
+.showOptions {
+    display: block !important;
+}
+#searchOptions .closeButton {
+    display: none;
+}
+#mobileSettings img {
+    padding: 0.6rem;
+    background-color: theme('colors.strong');
+    border: solid 5px theme('colors.primary');
+}
+#jobs {
+    margin-top: 3rem;
+}
+.jobEntry {
+    border: solid 3px theme('colors.primary');
+    background-color: theme('colors.strong');
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    transition: all 0.3s;
+}
+.jobEntry:hover {
+    background-color: theme('colors.secondary_fade');
+    border-color: theme('colors.strong');
+}
+.title {
+    font-family: 'Titillium Web';
+    color: theme('colors.light');
+    font-weight: 700;
+    font-size: 2rem;
+    transition: all 0.3s;
+    padding: 0.5rem;
+    overflow-wrap: break-word;
+}
+.jobEntry:hover .title {
+    color: theme('colors.primary');
+}
+.jobEntry:hover .skillsContainer, .jobEntry:hover .levelsContainer, .jobEntry:hover .dateContainer {
+    border-color: theme('colors.strong');
+}
+.skillsContainer {
+    padding-top: 0.5rem;
+    border-top: 1px solid theme('colors.primary');
+    margin-top: 1rem;
+}
+.skillsContainer span {
+    display: inline-block;
+    font-family: 'Bebas Neue';
+    color: theme('colors.primary');
+    font-size: 1.5rem;
+    padding-left: 1rem;
+    transition: all 0.3s;
+}
+.jobEntry:hover .skillsContainer span {
+    color: theme('colors.strong');
+}
+.skillsContainer img {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 0.3rem;
+}
+.levelsContainer {
+    border-top: 1px solid theme('colors.primary');
+    color: theme('colors.light');
+    margin-top: 1rem;
+}
+.jobEntry:hover .levelsContainer {
+    color: theme('colors.primary');
+}
+.levelsContainer span {
+    display: inline-block;
+    font-family: 'Titillium Web';
+    font-size: 1.5rem;
+    font-style: italic;
+    padding-right: 0.5rem;   
+}
+.levelsContainer span span {
+    font-family: 'Bebas Neue';
+    color: theme('colors.primary');
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+    padding-left: 0.5rem;
+}
+.dateContainer {
+    border-top: 1px solid theme('colors.primary');
+    margin-top: 1rem;
+}
+.dateContainer div {
+    margin-top: 1rem;
+    font-family: 'Bebas Neue';
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: theme('colors.primary');
+}
+.dateContainer span {
+    margin-left: 0.5rem;
+    text-shadow: none;
+}
+.search {
+    font-family: 'Bebas Neue';
+    font-size: 2rem;
+    background-color: theme('colors.strong');
+    color: theme('colors.primary');
+    transition: all 0.3s;
+    border: solid 5px theme('colors.primary');
+}
+.search::placeholder {
+    text-align: center;
+    color: theme('colors.primary');
+}
+.search:focus {
+    outline: none;
+    background-color: theme('colors.secondary_fade');
+    color: theme('colors.strong');
+    border-color: theme('colors.strong');
+}
+.modalMain .search {
+    background-color: theme('colors.secondary');
+}
+.modalMain .search::placeholder {
+    color: theme('colors.strong');
+}
+.modalMain .search:focus {
+    border-color: theme('colors.light');
+}
+.header {
+    font-family: 'Titillium Web';
+    font-size: 1.5rem;
+    margin-top: 0.7rem;
+    color: theme('colors.primary');
+    font-weight: 700;
+}
+.header span {
+    font-family: 'Bebas Neue';
+    border: 2px solid theme('colors.secondary_fade');
+    border-radius: 2rem;
+    padding: 0.3rem;
+}
+.jobEntry:hover {
+
+}
+#upArrow {
+    border: solid 5px theme('colors.primary');
+    background-color: theme('colors.secondary_fade');
+    color: theme('colors.primary');
+    padding-right: 1rem;
+    padding-left: 1rem;
+    position: fixed;
+    right: 20%;
+    bottom: 15%;
+    font-size: 3rem;
+    font-weight: 1000;
+    transition: all 0.3s;
+}
+#upArrow:hover {
+    cursor: pointer;
+    background-color: theme('colors.strong');
+    color: theme('colors.secondary');
+    border-color: theme('colors.secondary_fade');
+}
+#notFound {
+    font-family: 'Titillium Web';
+    font-size: 2rem;
+    color: theme('colors.primary');
+    font-weight: 700;
+    font-style: italic;
+}
+#searchOptions {
+    border: 3px solid theme('colors.primary');
+    background-color: theme('colors.secondary_fade');
+    position: fixed;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 30%;
+    left: 2%;
+    top: 45%;
+}
+#searchOptions h1 {
+    font-family: 'Bebas Neue';
+    font-size: 2.5rem;
+    color: theme('colors.primary');
+}
+.rowContainer {
+    font-family: 'Bebas Neue';
+    font-size: 2rem;
+    color: theme('colors.primary');
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.rowContainer button {
+    display: inline-block;
+    border: 3px solid theme('colors.primary');
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    font-size: 1.5rem;
+    margin-left: 1.5rem;
+    background-color: theme('colors.strong');
+    transition: all 0.3s;
+}
+.rowContainer button:hover {
+    background-color: theme('colors.secondary');
+    color: theme('colors.strong');
+    border-color: theme('colors.strong');
+}
+#checkboxContainer span {
+    font-size: 1.5rem;
+    font-family: 'Bebas Neue';
+    color: theme('colors.secondary');
+    display: inline-block;
+}
+.typeSearchCheckbox input {
+    visibility: hidden;
+}
+.typeSearchCheckbox {
+    top: 0.8rem;
+    display: inline-block;
+    width: 40px;
+    height: 10px;
+    background: theme('colors.secondary_fade');
+    margin: 1em;
+    border-radius: 10px;
+    position: relative;
+
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.2);
+    -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.2);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.2);
+}
+.typeSearchCheckbox label {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 10px;
+    margin: 0;
+
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    transition: all .2s ease;
+    cursor: pointer;
+    position: absolute;
+    top: -3px;
+    left: -3px;
+
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.3);
+    background-color: theme('colors.primary');
+}
+.typeSearchCheckbox input:checked + label {
+    left: 27px;
+    background-color: theme('colors.secondary');
+}
+.modal {
+    width: 35%;
+    border: 3px solid theme('colors.primary');
+    background-color: theme('colors.strong');
+    position: fixed;
+    left: 32.4%;
+    top: 45%;
+    height: 48vh;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.3), 0 1px 0 rgba(255,255,255,0.2);
+}
+.closeButton {
+    display: block;
+    height: 50px;
+    width: 50px;
+    background-color: theme('colors.primary');
+    border: 3px solid theme('colors.primary');
+    border-top: 0px;
+    border-left: 0px;
+    position: relative;
+    transition: all 0.3s;
+
+    &:after {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        content: "\d7";
+        font-size: 5rem;
+        color: theme('colors.light');
+        line-height: 50px;
+        text-align: center;
+        transition: all 0.3s;
+        margin-top: -6px;
+        margin-left: 0px;
+    }
+}
+.closeButton:hover {
+    cursor: pointer;
+    background-color: theme('colors.light');
+    &:after {
+        color: theme('colors.primary');
+    }
+}
+.tagsContainer {
+    margin-top: 2rem;
+    overflow-y: scroll;
+    border: 5px solid theme('colors.secondary_fade');
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem;
+    height: 27vh;
+}
+.tagWrapper {
+    display: inline-block;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 5px solid theme('colors.strong');
+}
+.tagWrapper:hover {
+    border: 5px solid theme('colors.secondary');
+}
+.tagContainer {
+    height: 70px;
+    width: 70px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.tagContainer div {
+    position: absolute;
+    transform: translate(-50%, -30%);
+    left: 50%;
+    top: 50%;
+    font-size: 2rem;
+    font-family: 'Bebas Neue';
+    color: theme('colors.secondary');
+    text-shadow: 2px 1px 2px rgb(0, 0, 0);
+    z-index: 2;
+}
+.tagHeader {
+    transform: translate(-50%, -100%) !important;
+    text-shadow: none !important;
+    background-color: theme('colors.strong_fade');
+    padding: 0.1rem;
+    border-radius: 10px;
+    background-opacity: 0.1;
+    color: theme('colors.light') !important;
+    font-size: 1.5rem !important;
+}
+.addedTag {
+    border: 5px solid theme('colors.primary');
+    background-color: theme('colors.secondary_fade');
+}
+.rowColumn {
+    cursor: pointer;
+}
+.rowColumn img {
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    border: 3px solid theme('colors.primary');
+    background-color: theme('colors.strong_fade');
+    padding: 0.5rem;
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s;
+}
+.rowColumn:hover img {
+    background-color: theme('colors.primary');
+    border-color: theme('colors.strong_fade');
+}
+#contentInfo {
+    width: 30%;
+    border: 5px solid theme('colors.primary');
+    background-color: theme('colors.strong');
+    position: fixed;
+    left: 68%;
+    top: 30%;
+    height: 45vh;
+    overflow-y: scroll;
+    font-family: 'Titillium Web';
+    font-size: 1.5rem;
+    font-style: italic;
+}
+#contentInfoMobile {
+    width: 100%;
+    border: 5px solid theme('colors.primary');
+    background-color: theme('colors.strong');
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    overflow-y: scroll;
+    font-family: 'Titillium Web';
+    font-size: 1.5rem;
+    font-style: italic;
+}
+#contentInfo, #contentInfoMobile {
+    color: theme('colors.light');
+}
+#contentInfoMobile .closeButton {
+    font-family: 'Bebas Neue';
+    &:after {
+        margin-top: 4px !important;
+        margin-left: 8px !important;
+    }
+}
+#contentInfo h1, #contentInfoMobile h1 {
+    font-style: normal;
+    font-family: 'Bebas Neue';
+    color: theme('colors.primary');
+}
+#contentInfoMobile h1 {
+    margin-top: 2rem;
+}
+#contentInfo div, #contentInfoMobile {
+    padding: 1rem;
+}
+#levelsModal {
+    height: 50vh;
+}
