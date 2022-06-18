@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "NODE_OPTIONS=\"--max_old_space_size=8192\" next",
     "build": "chmod +x cleanup.sh && ./cleanup.sh && NODE_OPTIONS=\"--max_old_space_size=8192\" next build",
-    "start": "NODE_OPTIONS=\"--max_old_space_size=8192\" next start",
+    "start": "NODE_OPTIONS=\"--max_old_space_size=8192\" next start -p 3001",
     "lint": "NODE_OPTIONS=\"--max_old_space_size=8192\" next lint"
   },
   "dependencies": {
