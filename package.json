@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "NODE_OPTIONS=\"--max_old_space_size=8192\" next",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "build": "chmod +x cleanup.sh && ./cleanup.sh && NODE_OPTIONS=\"--max_old_space_size=8192\" next build",
+    "start": "NODE_OPTIONS=\"--max_old_space_size=8192\" next start",
+    "lint": "NODE_OPTIONS=\"--max_old_space_size=8192\" next lint"
   },
   "dependencies": {
     "axios": "^0.26.1",
