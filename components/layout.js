@@ -56,7 +56,7 @@ export default function Layout({ children }) {
     const navEntries = {
         'home': {
             spring: <NavLink key={uuid.generate()} link={'/jobs'} name={'home'}></NavLink>,
-            link: '/'
+            link: '/jobs'
         },
         'search': {
             spring: <NavLink key={uuid.generate()} link={'/jobs/search'} name={'search'}></NavLink>,
