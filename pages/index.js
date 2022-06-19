@@ -72,7 +72,7 @@ export default function Home({ config }) {
       skillElements.push(
         <figure data-tip={`${skill}: ${percent}%`} key={skill} className={`${styles.chart} ${styles[signifyClass]}`} data-percent={percent}>
           <ValueAnimation value={percent} percent={true}></ValueAnimation>
-          <img className={`${styles.language} ${styles[skill]}`} alt={`${skill}`} src={`/${skill}.png`} />
+          <img className={`${styles.language} ${styles[skill]}`} alt={`${skill}`} src={`/jobs/${skill}.png`} />
           <svg width={200} height={200}>
             <circle className={styles.outer} cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)"/>
           </svg>
@@ -134,7 +134,7 @@ export default function Home({ config }) {
             <div key={i} className={`inline-block`}>
               <span data-tip={`${combo[i]}: ${percent}%`} className={`${styles.comboEntryContainer} flex-col p-2`}>
                 <div className={styles.skillPercentage}>{percent}%</div>
-                <img alt={``} src={`/${combo[i]}.png`} />
+                <img alt={``} src={`/jobs/${combo[i]}.png`} />
               </span>
               <ReactTooltip key={`${i}_tooltip`} className={styles.tooltip} effect={`solid`} arrowColor={`#05668D`}/>
               <span key={`${i}_+`} className={`${styles.comboEntryPlus} flex-col`}>+</span>
@@ -167,7 +167,7 @@ export default function Home({ config }) {
             <div key={i} className={`inline-block`}>
               <span data-tip={`${combo[i]}: ${percent}%`} className={`${styles.comboEntryContainer} flex-col p-2`}>
                 <div className={styles.skillPercentage}>{percent}%</div>
-                <img alt={``} src={`/${combo[i]}.png`} />
+                <img alt={``} src={`/jobs/${combo[i]}.png`} />
               </span>
               <ReactTooltip key={`${i}-tooltip`} className={styles.tooltip} effect={`solid`} arrowColor={`#05668D`} />
             </div>
@@ -238,27 +238,27 @@ export default function Home({ config }) {
           <span className={styles.levelsContainerInner}>
             <ValueAnimation value={Math.ceil(data.levels.blank / total * 100)} percent={true}></ValueAnimation>
             <div className={styles.levelText}>blank</div>
-            <img alt={`blank`} src={`/blank.png`} />
+            <img alt={`blank`} src={`/jobs/blank.png`} />
           </span>
           <span className={styles.levelsContainerInner}>
             <ValueAnimation value={Math.ceil(data.levels.intern / total * 100)} percent={true}></ValueAnimation>
             <div className={styles.levelText}>intern</div>
-            <img alt={`intern`} src={`/intern.png`} />
+            <img alt={`intern`} src={`/jobs/intern.png`} />
           </span>
           <span className={styles.levelsContainerInner}>
             <ValueAnimation value={Math.ceil(data.levels.apprentice / total * 100)} percent={true}></ValueAnimation>
             <div className={styles.levelText}>apprentice</div>
-            <img alt={`apprentice`} src={`/apprentice.png`} />
+            <img alt={`apprentice`} src={`/jobs/apprentice.png`} />
           </span>
           <span className={styles.levelsContainerInner}>
             <ValueAnimation value={Math.ceil(data.levels.junior / total * 100)} percent={true}></ValueAnimation>
             <div className={styles.levelText}>junior</div>
-            <img alt={`junior`} src={`/junior.png`} />
+            <img alt={`junior`} src={`/jobs/junior.png`} />
           </span>
           <span className={styles.levelsContainerInner}>
             <ValueAnimation value={Math.ceil(data.levels.senior / total * 100)} percent={true}></ValueAnimation>
             <div className={styles.levelText}>senior</div>
-            <img alt={`senior`} src={`/senior.png`} />
+            <img alt={`senior`} src={`/jobs/senior.png`} />
           </span>
         </div>
       </div>
@@ -282,7 +282,7 @@ export default function Home({ config }) {
       <Header></Header>
       <Layout>
         <div className={`${loading ? 'visible' : 'hidden'} mx-auto w-1/2`}>
-          <Image src={'/loading.gif'} alt={``} width={200} height={200} />
+          <Image src={'/jobs/loading.gif'} alt={``} width={200} height={200} />
         </div>
         <div id={styles.main} className={`${loading ? 'hidden' : 'visible'}`}>
           <div id={styles.intro}>There are a total of <ValueAnimation value={stats.total}></ValueAnimation> software jobs data-mined.</div>

@@ -346,7 +346,7 @@ export default function Search({ config }) {
                     <div id={styles.mobileSettings} onClick={(e) => {
                         setSettingsCollapse(true);
                     }}>
-                        <img alt={`mobile-settings`} src={`settings.png`} width={100} height={100} />
+                        <img alt={`mobile-settings`} src={`/jobs/settings.png`} width={100} height={100} />
                     </div>
                     <div id={styles.jobs} key={index}>
                         {(jobs.length !== 0) ?
@@ -370,7 +370,7 @@ export default function Search({ config }) {
                                         <div className={styles.skillsContainer}>
                                             {job.info.skills.map((skill) => (
                                                 <span key={`${idx}-${skill}`}>
-                                                    <img src={`/${skillImages[skill]}`} alt={`${skill}`} />
+                                                    <img src={`/jobs/${skillImages[skill]}`} alt={`${skill}`} />
                                                     {skill}
                                                 </span>
                                             ))}
@@ -412,7 +412,7 @@ export default function Search({ config }) {
                     <animated.div ref={contentRef} id={styles.contentInfoMobile} className={quickView ? 'visible' : 'hidden'} style={springContentMobile}>
                         <div>
                             <div className={`${/*contentLoading ? 'visible' : */'hidden'} mx-auto w-1/2`}>
-                                <Image src={'/loading.gif'} alt={``} width={200} height={200} />
+                                <Image src={'/jobs/loading.gif'} alt={``} width={200} height={200} />
                             </div>
                             <button className={styles.closeButton} onClick={(e) => { setQuickView(false); }}></button>
                             {infoContent.map((c, idx) => {
@@ -430,7 +430,7 @@ export default function Search({ config }) {
                     {(infoContent.length > 0) && !isMobile ? (
                     <animated.div ref={contentRef} id={styles.contentInfo} style={springContent}>
                         <div className={`${/*contentLoading ? 'visible' : */'hidden'} mx-auto w-1/2`}>
-                            <Image src={'/loading.gif'} alt={``} width={200} height={200} />
+                            <Image src={'/jobs/loading.gif'} alt={``} width={200} height={200} />
                         </div>
                         <div>
                         {infoContent.map((c, idx) => {
@@ -458,7 +458,7 @@ export default function Search({ config }) {
                                     setIndex(0);
                                     setTags(tags.filter((t) => t !== tag));
                                 }}>
-                                    <img alt={``} src={`/${skillImages[tag]}`} />
+                                    <img alt={``} src={`/jobs/${skillImages[tag]}`} />
                                 </span>
                             ))}
                             
@@ -480,7 +480,7 @@ export default function Search({ config }) {
                                     setIndex(0);
                                     setLevels(levels.filter((l) => l !== level));
                                 }}>
-                                    <img alt={``} src={`/${level}.png`} />
+                                    <img alt={``} src={`/jobs/${level}.png`} />
                                 </span>
                             ))}
 
@@ -561,7 +561,7 @@ export default function Search({ config }) {
                                                 }}>
                                                     <span className={styles.tagContainer}>
                                                         <div>{Math.ceil(genStats.skills[tag] / genStats.total * 100)}%</div>
-                                                        <img alt={``} src={`/${skillImages[tag]}`} />
+                                                        <img alt={``} src={`/jobs/${skillImages[tag]}`} />
                                                     </span>
                                                 </div>
                                             );
@@ -594,7 +594,7 @@ export default function Search({ config }) {
                                                     <span className={styles.tagContainer}>
                                                         <div className={styles.tagHeader}>{level}</div>
                                                         <div>{Math.ceil(genStats.levels[level] / genStats.total * 100)}%</div>
-                                                        <img alt={``} src={`/${level}.png`} />
+                                                        <img alt={``} src={`/jobs/${level}.png`} />
                                                     </span>
                                                 </div>
                                             );
@@ -619,7 +619,7 @@ export default function Search({ config }) {
                         }}>↑</div>
                     )) : ''}
                     <div className={`${loading ? 'visible' : 'hidden'} mx-auto w-1/2`}>
-                        <Image src={'/loading.gif'} alt={``} width={200} height={200} />
+                        <Image src={'/jobs/loading.gif'} alt={``} width={200} height={200} />
                     </div>
                     {endSearch && (jobs.length !== 0) ? (
                         <div className={styles.header}>{jobs[jobs.length-1] === 1 ? '' : 'A total of '}<span>{jobs[jobs.length-1]}</span> {jobs[jobs.length-1] === 1 ? 'job has' : 'jobs have'} been fetched.</div>
