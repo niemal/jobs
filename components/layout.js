@@ -102,7 +102,7 @@ export default function Layout({ children }) {
                             <a key={`${k}-burger`} className={styles.burgerEntry} href={navEntries[k].link}><img alt={k} src={`${k}.png`} />{k}</a>
                         ))}
                     </div>
-                    <div id={styles.burgerFooter}>Search for a software job or just take a peek on what's going on. Alternatively, you can also check out my blog. :)</div>
+                    <div id={styles.burgerFooter}>Search for a software job or just take a peek on what&apos;s going on. Alternatively, you can also check out my blog. :)</div>
                 </animated.div>
             )) : ''}
 
