@@ -60,7 +60,7 @@ export default function Layout({ children }) {
         },
         'search': {
             spring: <NavLink key={uuid.generate()} link={'/jobs/search'} name={'search'}></NavLink>,
-            link: '/search'
+            link: '/jobs/search'
         },
         'blog': {
             spring: <NavLink key={uuid.generate()} link={'/blog'} name={'blog'}></NavLink>,
