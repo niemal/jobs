@@ -21,7 +21,7 @@ export function NavLink({ name, link }) {
         }}
         style={spring}
         >
-            <img alt={name} src={`/${name}.png`} />
+            <img alt={name} src={`/jobs/${name}.png`} />
             <span>{name}</span>
         </animated.a>
     );
