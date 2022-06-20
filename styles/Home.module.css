@@ -24,6 +24,12 @@
     display: block !important;
     margin-left: 2rem;
   }
+  .levelsContainerInner div {
+    transform: translate(-50%, 0%) !important;
+  }
+  .levelsContainerInner .levelText {
+    transform: translate(-70%, -70%) !important;
+  }
 }
 .tooltip {
   font-family: 'Bebas Neue';
@@ -163,13 +169,13 @@
   font-weight: 1000;
   color: theme('colors.primary');
 }
-.comboEntryContainer img, .levelsContainerInner img {
+/*.comboEntryContainer img,.levelsContainerInner img {
   positon: absolute;
   display: inline-block;
   max-width: 100px;
   max-height: 100px;
   background-color: rgba(255,0,0,0);
-}
+}*/ 
 .comboEntryContainer div {
   position: absolute;
   transform: translate(20%, -90%);
@@ -186,7 +192,7 @@
 }
 .levelsContainerInner div {
   position: absolute;
-  transform: translate(-50%, 0%);
+  transform: translate(-50%, -70%);
   left: 50%;
   top: 50%;
   font-size: 2rem;
@@ -198,9 +204,9 @@
   text-shadow: 1px 1px 2px rgb(0, 0, 0);
   z-index: 2;
 }
-.levelText {
-  transform: translate(-70%, -70%) !important;
-  background-color: theme('colors.strong_fade') !important;
+.levelsContainerInner .levelText {
+  transform: translate(-70%, -150%);
+  background-color: theme('colors.strong_fade');
 }
 .levelsContainerOuter {
   padding-bottom: 3rem;

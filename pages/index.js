@@ -129,12 +129,13 @@ export default function Home({ config }) {
         }
 
         let percent = Math.ceil(count / data.total * 100);
+        // <img alt={``} src={`/jobs/${combo[i]}.png`} />
         if (i+1 !== combo.length) {
           comboEntryElements.push(
             <div key={i} className={`inline-block`}>
               <span data-tip={`${combo[i]}: ${percent}%`} className={`${styles.comboEntryContainer} flex-col p-2`}>
                 <div className={styles.skillPercentage}>{percent}%</div>
-                <img alt={``} src={`/jobs/${combo[i]}.png`} />
+                <Image style={{ position: 'absolute', display: 'inline-block',}} src={`/jobs/${combo[i]}.png`} width={100} height={100} objectFit={`contain`}/>
               </span>
               <ReactTooltip key={`${i}_tooltip`} className={styles.tooltip} effect={`solid`} arrowColor={`#05668D`}/>
               <span key={`${i}_+`} className={`${styles.comboEntryPlus} flex-col`}>+</span>
@@ -163,11 +164,12 @@ export default function Home({ config }) {
             </span>
           );*/
         } else {
+          //<img alt={``} src={`/jobs/${combo[i]}.png`} />
           comboEntryElements.push(
             <div key={i} className={`inline-block`}>
               <span data-tip={`${combo[i]}: ${percent}%`} className={`${styles.comboEntryContainer} flex-col p-2`}>
                 <div className={styles.skillPercentage}>{percent}%</div>
-                <img alt={``} src={`/jobs/${combo[i]}.png`} />
+                <Image style={{ position: 'absolute', display: 'inline-block',}} src={`/jobs/${combo[i]}.png`} width={100} height={100} objectFit={`contain`}/>
               </span>
               <ReactTooltip key={`${i}-tooltip`} className={styles.tooltip} effect={`solid`} arrowColor={`#05668D`} />
             </div>
@@ -238,27 +240,27 @@ export default function Home({ config }) {
           <span className={styles.levelsContainerInner}>
             <ValueAnimation value={Math.ceil(data.levels.blank / total * 100)} percent={true}></ValueAnimation>
             <div className={styles.levelText}>blank</div>
-            <img alt={`blank`} src={`/jobs/blank.png`} />
+            <Image style={{ position: 'absolute', display: 'inline-block',}} src={`/jobs/blank.png`} width={100} height={100} objectFit={`contain`}/>
           </span>
           <span className={styles.levelsContainerInner}>
             <ValueAnimation value={Math.ceil(data.levels.intern / total * 100)} percent={true}></ValueAnimation>
             <div className={styles.levelText}>intern</div>
-            <img alt={`intern`} src={`/jobs/intern.png`} />
+            <Image style={{ position: 'absolute', display: 'inline-block',}} src={`/jobs/intern.png`} width={100} height={100} objectFit={`contain`}/>
           </span>
           <span className={styles.levelsContainerInner}>
             <ValueAnimation value={Math.ceil(data.levels.apprentice / total * 100)} percent={true}></ValueAnimation>
             <div className={styles.levelText}>apprentice</div>
-            <img alt={`apprentice`} src={`/jobs/apprentice.png`} />
+            <Image style={{ position: 'absolute', display: 'inline-block',}} src={`/jobs/apprentice.png`} width={100} height={100} objectFit={`contain`}/>
           </span>
           <span className={styles.levelsContainerInner}>
             <ValueAnimation value={Math.ceil(data.levels.junior / total * 100)} percent={true}></ValueAnimation>
             <div className={styles.levelText}>junior</div>
-            <img alt={`junior`} src={`/jobs/junior.png`} />
+            <Image style={{ position: 'absolute', display: 'inline-block',}} src={`/jobs/junior.png`} width={100} height={100} objectFit={`contain`}/>
           </span>
           <span className={styles.levelsContainerInner}>
             <ValueAnimation value={Math.ceil(data.levels.senior / total * 100)} percent={true}></ValueAnimation>
             <div className={styles.levelText}>senior</div>
-            <img alt={`senior`} src={`/jobs/senior.png`} />
+            <Image style={{ position: 'absolute', display: 'inline-block',}} src={`/jobs/senior.png`} width={100} height={100} objectFit={`contain`}/>
           </span>
         </div>
       </div>
