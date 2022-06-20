@@ -99,7 +99,7 @@ export default function Layout({ children }) {
                 <animated.div id={styles.burgerCard} style={props}>
                     <div id={styles.burgerContainer}>
                         {Object.keys(navEntries).map((k) => (
-                            <a key={`${k}-burger`} className={styles.burgerEntry} href={navEntries[k].link}><img alt={k} src={`${k}.png`} />{k}</a>
+                            <a key={`${k}-burger`} className={styles.burgerEntry} href={navEntries[k].link}><img alt={k} src={`/jobs/${k}.png`} />{k}</a>
                         ))}
                     </div>
                     <div id={styles.burgerFooter}>Search for a software job or just take a peek on what&apos;s going on. Alternatively, you can also check out my blog. :)</div>

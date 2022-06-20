@@ -63,7 +63,8 @@
   top: 0;
   font-family: 'Bebas Neue';
   color: theme('colors.light');
-  font-size: 4rem;
+  padding-top: 32px;
+  font-size: 3rem;
   left: 75%;
 }
 #headerNote {

@@ -7,7 +7,7 @@ export function NavLink({ name, link }) {
     const spring = useSpring({
         opacity: isHover ? 1 : 0.7,
         transform: `perspective(200px) rotateX(${isHover ? 360 : 0}deg)`,
-        config: { mass: 20, tension: 600, friction: 160 },
+        config: { mass: 4, tension: 200, friction: 160, duration: 420 },
     });
 
     return (
