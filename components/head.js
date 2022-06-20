@@ -15,7 +15,7 @@ export default function Header({
                 <meta name="description" content={'Check software jobs around the world by a skill-set and apply!'} />
                 <meta name="thumbnail" content={imageUrl} />
 
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/jobs/favicon.ico" />
                 <link rel="image_src" href={imageUrl} />
                 
                 {preload.filter((img) => img !== undefined && img !== '')
