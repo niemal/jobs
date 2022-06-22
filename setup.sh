@@ -30,4 +30,4 @@ chmod +x "$TARGET"
 
 # Finishing by cleaning up before building
 chmod +x "$(pwd)/cleanup.sh"
-.$(pwd)/cleanup.sh
+$(pwd)/cleanup.sh
