@@ -23,7 +23,7 @@ if [ "\$DIR_SIZE" -gt "10" ]; then
 fi
 
 #su jobs - -c "node $DATAMINING &> $LOGS/jobs_\$TODAY.log &"
-node $DATAMINING &> $LOGS/jobs_\$TODAY.log &
+pm2 stop jobs && node /home/jobs/jobs/data_mining.js &> /home/jobs/jobs/logs/jobs_$TODAY.log && pm2 start jobs &
 EOF
 
 chmod +x "$TARGET"
