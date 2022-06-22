@@ -3,10 +3,6 @@ TARGET=/etc/cron.daily/jobs_daily
 LOGS=$(pwd)/logs
 DATAMINING=$(pwd)/data_mining.js
 
-# creating user, group and assigning privileges
-adduser jobs --disabled-password --no-create-home
-chown -R jobs:jobs "$(pwd)"
-
 cat <<EOF > "$TARGET"
 #!/bin/bash
 
