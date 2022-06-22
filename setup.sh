@@ -33,3 +33,7 @@ su jobs - -c "node $DATAMINING &> $LOGS/jobs_\$TODAY.log &"
 EOF
 
 chmod +x "$TARGET"
+
+# Finishing by cleaning up before building
+chmod +x "$(pwd)/cleanup.sh"
+.$(pwd)/cleanup.sh
