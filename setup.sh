@@ -1,5 +1,5 @@
 #!/bin/bash
-TARGET=/etc/cron.daily/jobs_daily_cron.sh
+TARGET=/etc/cron.daily/jobs_daily
 LOGS=$(pwd)/logs
 DATAMINING=$(pwd)/data_mining.js
 
