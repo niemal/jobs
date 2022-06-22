@@ -4,11 +4,8 @@ LOGS=$(pwd)/logs
 DATAMINING=$(pwd)/data_mining.js
 
 # creating user, group and assigning privileges
-groupadd jobs
-adduser jobs - disabled-password
-usermod -aG jobs jobs
-chown -R :jobs "$(pwd)"
-chmod -R 777 "$(pwd)"
+adduser jobs --disabled-password --no-create-home
+chown -R jobs:jobs "$(pwd)"
 
 cat <<EOF > "$TARGET"
 #!/bin/bash
