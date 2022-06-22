@@ -657,9 +657,9 @@ async function crawlTotalJobs(dbHandle, browser, init_i=1, init_y=0, pages=0) {
             browser = await puppeteer.launch({ args: [
                 '--disk-cache-size=0',
                 `--set-user-agent=${ua}`,
-                '--disable-dev-shm-usage',
-                '--disable-accelerated-2d-canvas',
-                '--no-first-run',
+                //'--disable-dev-shm-usage',
+                //'--disable-accelerated-2d-canvas',
+                //'--no-first-run',
                 proxy
             ]});
             newBrowser = true;
@@ -1009,9 +1009,9 @@ async function crawlIndeed(dbHandle, browser, init_i=0, init_y=0, proxySwitch=0)
             browser = await puppeteer.launch({ args: [
                 '--disk-cache-size=0',
                 `--set-user-agent=${ua}`,
-                '--disable-dev-shm-usage',
-                '--disable-accelerated-2d-canvas',
-                '--no-first-run',
+                //'--disable-dev-shm-usage',
+                //'--disable-accelerated-2d-canvas',
+                //'--no-first-run',
                 proxies[proxySwitch]
             ]});
             
@@ -1059,9 +1059,9 @@ async function crawlIndeed(dbHandle, browser, init_i=0, init_y=0, proxySwitch=0)
                 browser = await puppeteer.launch({ args: [
                     '--disk-cache-size=0',
                     `--set-user-agent=${ua}`,
-                    '--disable-dev-shm-usage',
-                    '--disable-accelerated-2d-canvas',
-                    '--no-first-run',
+                    //'--disable-dev-shm-usage',
+                    //'--disable-accelerated-2d-canvas',
+                    //'--no-first-run',
                     proxies[proxySwitch]
                 ]});
                 
@@ -1237,9 +1237,9 @@ const client = new MongoClient(uri);
 const browserArgs = [
     '--disk-cache-size=0',
     `--set-user-agent=${ua}`,
-    '--disable-dev-shm-usage',
-    '--disable-accelerated-2d-canvas',
-    '--no-first-run',
+    //'--disable-dev-shm-usage',
+    //'--disable-accelerated-2d-canvas',
+    //'--no-first-run',
 ];
 
 async function main() {
