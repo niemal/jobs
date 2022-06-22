@@ -3,6 +3,13 @@ TARGET=/etc/cron.daily/jobs_daily
 LOGS=$(pwd)/logs
 DATAMINING=$(pwd)/data_mining.js
 
+# creating user, group and assigning privileges
+groupadd jobs
+adduser jobs - disabled-password
+usermod -aG jobs jobs
+chown -R :jobs "$(pwd)"
+chmod -R 777 "$(pwd)"
+
 cat <<EOF > "$TARGET"
 #!/bin/bash
 
@@ -22,7 +29,7 @@ if [ "\$DIR_SIZE" -gt "10" ]; then
     mv "jobs_logs_archive_\$TODAY.tar.gz" "$LOGS/archive"
 fi
 
-node "$DATAMINING" &> "$LOGS/jobs_\$TODAY.log" &
+su jobs - -c "node $DATAMINING &> $LOGS/jobs_\$TODAY.log &"
 EOF
 
 chmod +x "$TARGET"
