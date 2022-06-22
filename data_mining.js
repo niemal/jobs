@@ -1232,7 +1232,14 @@ async function niemalCrawler(db, browser) {
     niemalCrawler(db, browser);*/
 }
 
-const uri = `mongodb://${process.env.MONGODB_HOST}:${process.env.MONGODB_PORT}/`;
+let uri;
+
+if (process.env.MONGODB_PASS) {
+    uri = `mongodb://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@${process.env.MONGODB_HOST}:${process.env.MONGODB_PORT}/`;
+} else {
+    uri = `mongodb://${process.env.MONGODB_HOST}:${process.env.MONGODB_PORT}/`;
+}
+
 const client = new MongoClient(uri);
 const browserArgs = [
     '--disk-cache-size=0',
