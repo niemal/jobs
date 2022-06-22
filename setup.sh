@@ -1,5 +1,5 @@
 #!/bin/bash
-TARGET=/etc/cron.daily/jobs_daily
+TARGET=$(pwd)/jobs_daily.sh
 LOGS=$(pwd)/logs
 DATAMINING=$(pwd)/data_mining.js
 
@@ -22,7 +22,8 @@ if [ "\$DIR_SIZE" -gt "10" ]; then
     mv "jobs_logs_archive_\$TODAY.tar.gz" "$LOGS/archive"
 fi
 
-su jobs - -c "node $DATAMINING &> $LOGS/jobs_\$TODAY.log &"
+#su jobs - -c "node $DATAMINING &> $LOGS/jobs_\$TODAY.log &"
+node $DATAMINING &> $LOGS/jobs_\$TODAY.log &
 EOF
 
 chmod +x "$TARGET"
