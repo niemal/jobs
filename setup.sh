@@ -22,12 +22,11 @@ if [ "\$DIR_SIZE" -gt "10" ]; then
     mv "jobs_logs_archive_\$TODAY.tar.gz" "$LOGS/archive"
 fi
 
-#su jobs - -c "node $DATAMINING &> $LOGS/jobs_\$TODAY.log &"
-pm2 stop jobs && node /home/jobs/jobs/data_mining.js &> /home/jobs/jobs/logs/jobs_$TODAY.log && pm2 start jobs &
+node $DATAMINING &> $LOGS/jobs_\$TODAY.log &
 EOF
 
 chmod +x "$TARGET"
 
 # Finishing by cleaning up before building
-chmod +x "$(pwd)/cleanup.sh"
-$(pwd)/cleanup.sh
+#chmod +x "$(pwd)/cleanup.sh"
+#$(pwd)/cleanup.sh
