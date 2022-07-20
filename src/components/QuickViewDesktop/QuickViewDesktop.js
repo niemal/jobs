@@ -44,10 +44,6 @@ const Content = styled.p`
 `;
 
 function QuickViewDesktop({ infoContent, triggerInfoContent }) {
-  if (infoContent.length < 1) {
-    return <></>;
-  }
-
   const springContent = useSpring({
     opacity: triggerInfoContent ? 1 : 0,
     transform: `perspective(800px) rotateY(${triggerInfoContent ? 360 : 0}deg)`,
@@ -55,11 +51,16 @@ function QuickViewDesktop({ infoContent, triggerInfoContent }) {
   });
 
   const quickViewRef = useRef(null);
+
   useEffect(() => {
     if (quickViewRef?.current) {
       quickViewRef.current.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [infoContent]);
+
+  if (infoContent.length < 1) {
+    return <></>;
+  }
 
   return (
     <Wrapper>

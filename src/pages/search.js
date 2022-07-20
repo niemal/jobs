@@ -195,7 +195,20 @@ export default function Search({ config }) {
     } else {
       searchWithSettings(looseMode ? "loose" : "strict");
     }
-  }, [searchInput, index, levels, tags, looseMode, dateInput]);
+  }, [
+    // useEffect on change
+    searchInput,
+    index,
+    levels,
+    tags,
+    looseMode,
+    dateInput,
+    // dependencies to make the warning go away
+    getJobs,
+    endSearch,
+    search,
+    searchWithSettings,
+  ]);
 
   const [infoContent, setInfoContent] = useState([]);
   const [triggerInfoContent, setTriggerInfoContent] = useState(true);

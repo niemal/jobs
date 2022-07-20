@@ -59,16 +59,16 @@ export const Container = styled.div`
 `;
 
 function SearchModal({ state, closeButtonHandler, children }) {
-  if (!state) {
-    return null;
-  }
-
   const animationProp = {
     from: { opacity: 0.7, transform: "scaleY(-1)" },
     enter: { opacity: 1, transform: "scaleY(1)" },
     trail: 500,
   };
   const Transition = useTransition(state, animationProp);
+
+  if (!state) {
+    return null;
+  }
 
   return (
     <Wrapper>

@@ -50,33 +50,18 @@ const Wrapper = styled.div`
 `;
 
 function AnchorArrow({ index, endSearch, mainRef }) {
+  const animationProp = {
+    from: { opacity: 0.7, transform: "scaleY(-1)" },
+    enter: { opacity: 1, transform: "scaleY(1)" },
+    trail: 500,
+  };
+  const upArrowTrans = useTransition(index, animationProp);
+
   if (index < 1) {
     return null;
   }
 
-  if (!endSearch) {
-    const animationProp = {
-      from: { opacity: 0.7, transform: "scaleY(-1)" },
-      enter: { opacity: 1, transform: "scaleY(1)" },
-      trail: 500,
-    };
-    const upArrowTrans = useTransition(index, animationProp);
-
-    return (
-      <Wrapper>
-        {upArrowTrans((props, animate) => (
-          <animated.div
-            style={props}
-            onClick={(e) => {
-              mainRef.current.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            ↑
-          </animated.div>
-        ))}
-      </Wrapper>
-    );
-  } else {
+  if (endSearch) {
     return (
       <Wrapper
         onClick={(e) => {
@@ -87,6 +72,21 @@ function AnchorArrow({ index, endSearch, mainRef }) {
       </Wrapper>
     );
   }
+
+  return (
+    <Wrapper>
+      {upArrowTrans((props, animate) => (
+        <animated.div
+          style={props}
+          onClick={(e) => {
+            mainRef.current.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
+          ↑
+        </animated.div>
+      ))}
+    </Wrapper>
+  );
 }
 
 export default AnchorArrow;
