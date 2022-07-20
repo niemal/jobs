@@ -1127,7 +1127,7 @@ async function buildStats(db) {
         general.levels[level] = 0;
 
         for (entry of data) {
-            if (entry.info?.level?.includes(level)) {
+            if (entry.info.level.includes(level)) {
                 general.levels[level] += 1;
             }
         }

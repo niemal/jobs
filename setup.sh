@@ -2,6 +2,7 @@
 TARGET=$(pwd)/jobs_daily.sh
 LOGS=$(pwd)/logs
 DATAMINING=$(pwd)/data_mining.js
+NODE_PATH=$(which node)
 
 cat <<EOF > "$TARGET"
 #!/bin/bash
@@ -22,11 +23,14 @@ if [ "\$DIR_SIZE" -gt "10" ]; then
     mv "jobs_logs_archive_\$TODAY.tar.gz" "$LOGS/archive"
 fi
 
-node $DATAMINING &> $LOGS/jobs_\$TODAY.log &
+$NODE_PATH $DATAMINING &> $LOGS/jobs_\$TODAY.log &
 EOF
 
 chmod +x "$TARGET"
 
-# Finishing by cleaning up before building
-#chmod +x "$(pwd)/cleanup.sh"
-#$(pwd)/cleanup.sh
+# Setting config for building..
+cat <<EOF > config.json
+{
+    "siteUrl": "https://niemal.dev/jobs"
+}
+EOF
