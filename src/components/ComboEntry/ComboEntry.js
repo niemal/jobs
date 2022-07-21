@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 
 const InnerWrapper = styled.div`
   padding: 8px;
-
+  /* filter: drop-shadow(2px 2px 2px var(--color-tertiary)); */
   & > span {
     position: absolute;
     display: inline-block;

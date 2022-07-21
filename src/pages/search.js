@@ -203,11 +203,6 @@ export default function Search({ config }) {
     tags,
     looseMode,
     dateInput,
-    // dependencies to make the warning go away
-    getJobs,
-    endSearch,
-    search,
-    searchWithSettings,
   ]);
 
   const [infoContent, setInfoContent] = useState([]);
