@@ -40,7 +40,7 @@ import {
 } from "@floating-ui/react-dom-interactions";
 // import { motion, AnimatePresence } from "framer-motion";
 import { useTransition, animated } from "react-spring";
-import mergeRefs from "react-merge-refs";
+import { mergeRefs } from "react-merge-refs";
 
 interface Props {
   label: string;
@@ -90,7 +90,7 @@ export default function Tooltip({
 
   // Preserve the consumer's ref
   const ref = useMemo(
-    () => mergeRefs([reference, (children as any).ref]) as Function,
+    () => mergeRefs([reference, (children as any).ref]),
     [reference, children]
   );
 
