@@ -1,29 +1,4 @@
-// import ReactTooltip from "react-tooltip";
 import styled from "styled-components";
-
-// const Wrapper = styled.div`
-//   & > div {
-//     font-family: var(--font-primary);
-//     color: var(--color-tertiary);
-//     font-size: ${28 / 16}rem;
-//     background-color: var(--color-secondary);
-//     border: 5px solid var(--color-primary);
-//     border-bottom: 0;
-//     border-top: 0;
-//     width: max-content;
-//     max-width: 70ch;
-//   }
-// `;
-
-// function Tooltip({ place }) {
-//   return (
-//     <Wrapper>
-//       <ReactTooltip effect={`solid`} place={place} arrowColor={`#05668D`} />
-//     </Wrapper>
-//   );
-// }
-
-// export default Tooltip;
 import { cloneElement, useMemo, useState } from "react";
 import {
   Placement,
@@ -39,7 +14,6 @@ import {
   useRole,
   useDismiss,
 } from "@floating-ui/react-dom-interactions";
-// import { motion, AnimatePresence } from "framer-motion";
 import { useTransition, animated } from "react-spring";
 import { mergeRefs } from "react-merge-refs";
 import { QUERIES } from "../constants";
@@ -64,16 +38,18 @@ const Wrapper = styled.div`
     border: 5px solid var(--color-primary);
     border-radius: 8px;
     width: max-content;
+    text-align: center;
     max-width: 350px;
     padding: 8px;
     margin-top: ${(p) => (p.origin === "index" ? "-24px" : "0px")};
     margin-left: ${(p) => (p.origin === "index" ? "-32px" : "24px")};
+    filter: drop-shadow(1px 2px 3px var(--color-gray-800));
   }
 
   @media ${QUERIES.tabletAndSmaller} {
     & > div {
       margin-top: ${(p) => (p.origin === "index" ? "-24px" : "-220px")};
-      margin-left: ${(p) => (p.origin === "index" ? "-32px" : "310px")};
+      margin-left: ${(p) => (p.origin === "index" ? "-32px" : "-290px")};
     }
   }
 `;
@@ -142,27 +118,6 @@ export default function Tooltip({
           ))}
         </Wrapper>
       )}
-      {/* <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ type: "spring", damping: 20, stiffness: 300 }}
-            {...getFloatingProps({
-              ref: floating,
-              className: "Tooltip",
-              style: {
-                position: strategy,
-                top: y ?? 0,
-                left: x ?? 0,
-              },
-            })}
-          >
-            {label}
-          </motion.div>
-        )}
-      </AnimatePresence> */}
     </>
   );
 }
