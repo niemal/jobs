@@ -90,7 +90,7 @@ export default function Tooltip({
 
   // Preserve the consumer's ref
   const ref = useMemo(
-    () => mergeRefs([reference, (children as any).ref]),
+    () => mergeRefs([reference, (children as any).ref]) as Function,
     [reference, children]
   );
 
