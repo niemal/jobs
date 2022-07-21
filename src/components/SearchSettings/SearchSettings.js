@@ -239,14 +239,11 @@ function SearchSettings({
           <Preface>date:</Preface>
           <Tooltip
             label={`You can use the following format: DD/MM/YYYY-DD/MM/YYYY, with the former being "from" and the latter being "to" as date ranges.`}
+            origin={"search"}
           >
-            <DateInput
-              data-tip={`You can use the following format: DD/MM/YYYY-DD/MM/YYYY, with the former being "from" and the latter being "to" as date ranges.`}
-              placeholder={"DD/MM/YYYY"}
-              onChange={dateInputHandler}
-            />
+            <DateInput placeholder={"DD/MM/YYYY"} onChange={dateInputHandler} />
+            {/* <Tooltip effect={`solid`} place={`right`} arrowColor={`#52796F`} /> */}
           </Tooltip>
-          {/* <Tooltip effect={`solid`} place={`right`} arrowColor={`#52796F`} /> */}
         </Container>
 
         <Container>

@@ -28,7 +28,8 @@ import { cloneElement, useMemo, useState } from "react";
 import {
   Placement,
   offset,
-  flip,
+  // flip,
+  autoPlacement,
   shift,
   autoUpdate,
   useFloating,
@@ -40,11 +41,14 @@ import {
 } from "@floating-ui/react-dom-interactions";
 // import { motion, AnimatePresence } from "framer-motion";
 import { useTransition, animated } from "react-spring";
-import { mergeRefs } from "react-merge-refs";
+// import { mergeRefs } from "react-merge-refs";
+import mergeRefs from "react-merge-refs";
+import { QUERIES } from "../constants";
 
 interface Props {
   label: string;
   placement?: Placement;
+  origin: "index" | "search";
   children: JSX.Element;
 }
 
@@ -61,23 +65,34 @@ const Wrapper = styled.div`
     border: 5px solid var(--color-primary);
     border-radius: 8px;
     width: max-content;
-    max-width: 70ch;
+    max-width: 350px;
     padding: 8px;
+    margin-top: ${(p) => (p.origin === "index" ? "-24px" : "0px")};
+    margin-left: ${(p) => (p.origin === "index" ? "-32px" : "24px")};
+  }
+
+  @media ${QUERIES.tabletAndSmaller} {
+    & > div {
+      margin-top: ${(p) => (p.origin === "index" ? "-24px" : "-220px")};
+      margin-left: ${(p) => (p.origin === "index" ? "-32px" : "310px")};
+    }
   }
 `;
 
 export default function Tooltip({
   children,
   label,
-  placement = "bottom",
+  placement = "top",
+  origin = "index",
 }: Props) {
   const [open, setOpen] = useState(false);
 
   const { x, y, reference, floating, strategy, context } = useFloating({
     placement,
     open,
+    // strategy: "fixed",
     onOpenChange: setOpen,
-    middleware: [offset(5), flip(), shift({ padding: 8 })],
+    middleware: [offset(16), autoPlacement(), shift({ padding: 8 })],
     whileElementsMounted: autoUpdate,
   });
 
@@ -103,20 +118,24 @@ export default function Tooltip({
     <>
       {cloneElement(children, getReferenceProps({ ref, ...children.props }))}
       {open && (
-        <Wrapper>
+        <Wrapper
+          origin={origin}
+          style={{
+            ...getFloatingProps({
+              ref: floating,
+              className: "Tooltip",
+              style: {
+                position: strategy,
+                top: y ?? 0,
+                left: x ?? 0,
+              },
+            }),
+          }}
+        >
           {transition((props, isOpen) => (
             <animated.div
               style={{
                 ...props,
-                ...getFloatingProps({
-                  ref: floating,
-                  className: "Tooltip",
-                  style: {
-                    position: strategy,
-                    top: y ?? 0,
-                    left: x ?? 0,
-                  },
-                }),
               }}
             >
               {label}
