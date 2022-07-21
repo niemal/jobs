@@ -41,8 +41,7 @@ import {
 } from "@floating-ui/react-dom-interactions";
 // import { motion, AnimatePresence } from "framer-motion";
 import { useTransition, animated } from "react-spring";
-// import { mergeRefs } from "react-merge-refs";
-import mergeRefs from "react-merge-refs";
+import { mergeRefs } from "react-merge-refs";
 import { QUERIES } from "../constants";
 
 interface Props {
