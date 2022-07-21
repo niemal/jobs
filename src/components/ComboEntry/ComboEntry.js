@@ -53,17 +53,19 @@ const Plus = styled.span`
 function ComboEntry({ entry, percent, counter, max }) {
   return (
     <Wrapper>
-      <InnerWrapper data-tip={`${entry}: ${percent}%`}>
-        <PercentWrapper>{percent}%</PercentWrapper>
-        <Image
-          src={`/jobs/${SKILLS[entry].img}`}
-          width={100}
-          height={100}
-          objectFit={`contain`}
-        />
-      </InnerWrapper>
-
-      <Tooltip skill={entry} />
+      <Tooltip label={`${entry}: ${percent}%`}>
+        <InnerWrapper data-tip={`${entry}: ${percent}%`}>
+          <PercentWrapper>{percent}%</PercentWrapper>
+          <Image
+            src={`/jobs/${SKILLS[entry].img}`}
+            width={100}
+            height={100}
+            objectFit={`contain`}
+          />
+        </InnerWrapper>
+        {/* <Tooltip skill={entry} /> */}
+        {/* <Tooltip skill={entry} place={"bottom"} /> */}
+      </Tooltip>
 
       {counter + 1 !== max ? <Plus>+</Plus> : ""}
     </Wrapper>

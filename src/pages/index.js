@@ -72,7 +72,6 @@ export default function Home({ config }) {
           signify={signifyClass}
         />
       );
-      // skillElements.push(<Tooltip key={`${skill}-tooltip`} skill={skill} />);
       counter += 1;
     }
 

@@ -102,28 +102,30 @@ const Wrapper = styled.div`
 function Figure({ skill, percent, signify }) {
   return (
     <Wrapper>
-      <FigureWrapper
-        key={skill}
-        data-tip={`${skill}: ${percent}%`}
-        data-percent={percent}
-        signify={signify}
-      >
-        <ValueAnimation value={percent} percent={true}></ValueAnimation>
-        <Image
-          skill={skill}
-          alt={`${skill}`}
-          src={`/jobs/${SKILLS[skill].img}`}
-        />
-        <svg width={200} height={200}>
-          <circle
-            cx={"95"}
-            cy={"95"}
-            r={"85"}
-            transform={"rotate(-90, 95, 95)"}
+      <Tooltip label={`${skill}: ${percent}%`}>
+        <FigureWrapper
+          key={skill}
+          data-tip={`${skill}: ${percent}%`}
+          data-percent={percent}
+          signify={signify}
+        >
+          <ValueAnimation value={percent} percent={true}></ValueAnimation>
+          <Image
+            skill={skill}
+            alt={`${skill}`}
+            src={`/jobs/${SKILLS[skill].img}`}
           />
-        </svg>
-      </FigureWrapper>
-      <Tooltip key={`${skill}-tooltip`} skill={skill} place={"bottom"} />
+          <svg width={200} height={200}>
+            <circle
+              cx={"95"}
+              cy={"95"}
+              r={"85"}
+              transform={"rotate(-90, 95, 95)"}
+            />
+          </svg>
+        </FigureWrapper>
+      </Tooltip>
+      {/* <Tooltip key={`${skill}-tooltip`} skill={skill} place={"bottom"} /> */}
     </Wrapper>
   );
 }
