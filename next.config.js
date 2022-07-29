@@ -2,6 +2,7 @@
 const nextConfig = {
   basePath: "/jobs",
   reactStrictMode: true,
+  swcMinify: true,
   compiler: {
     styledComponents: true,
   },
